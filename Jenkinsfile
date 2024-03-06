@@ -9,7 +9,7 @@ pipeline {
                     checkout scm
 
                     // Compile the .cpp file using a shell script
-                    sh 'g++ main/hello.cpp -o output'
+                    sh 'g++ hello.cpp -o output'
                 }
             }
         }
@@ -24,7 +24,7 @@ pipeline {
         }
 
         stage('Deploy') {
-            bacd
+            
         }
     }
 
