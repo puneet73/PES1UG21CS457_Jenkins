@@ -9,7 +9,7 @@ pipeline {
                     checkout scm
 
                     // Compile the .cpp file using a shell script
-                    sh 'g++ hello.cpp -o output'
+                    sh 'g++ main/hello.cpp -o output'
                 }
             }
         }
