@@ -4,27 +4,21 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                script {
-                    // Assuming you have a Jenkinsfile in your source code repository
-                    checkout scm
-
-                    // Compile the .cpp file using a shell script
-                    sh 'g++ hello.cpp -o output'
-                }
+                build 'PES1UG21CS457-1'
+                sh 'g++ main.cpp -o output'
             }
         }
 
         stage('Test') {
             steps {
-                script {
-                    // Run the compiled binary
-                    sh './output'
-                }
+                sh './output'
             }
         }
 
         stage('Deploy') {
-            
+            steps {
+                echo 'deploy'
+            }
         }
     }
 
